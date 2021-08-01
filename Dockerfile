@@ -9,8 +9,6 @@ ENV HUGO_VERSION=${HUGO_VERSION}
 ENV HUGO_TYPE=_extended
 ENV HUGO_ID=hugo${HUGO_TYPE}_${HUGO_VERSION}
 
-# 将容器启动脚本拷贝至镜像内
-COPY ./run.sh /run.sh
 COPY ${HUGO_ID}_Linux-64bit.tar.gz /${HUGO_ID}_Linux-64bit.tar.gz
 RUN tar -xzf /${HUGO_ID}_Linux-64bit.tar.gz -C /tmp \
     && mkdir -p /usr/local/sbin \
