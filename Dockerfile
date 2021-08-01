@@ -23,8 +23,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 # golang binary在alpine中运行的必要条件
 RUN apk add --update git asciidoctor libc6-compat libstdc++ \
     && apk upgrade \
-    && apk add --no-cache ca-certificates \
-    && chmod 0777 /run.sh
+    && apk add --no-cache ca-certificates
 
 # 挂载卷
 VOLUME /src
